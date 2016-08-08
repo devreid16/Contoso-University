@@ -9,7 +9,8 @@ namespace ContosoUniversity.DAL
 {
     public class SchoolInitializers : System.Data.Entity.DropCreateDatabaseIfModelChanges<SchoolContext>
     {
-
+        //takes the database context object as an input parameter
+        //code in the method uses object to add new entities to the database
         protected override void Seed(SchoolContext context)
         {
             var students = new List<Student>
@@ -24,6 +25,8 @@ namespace ContosoUniversity.DAL
             new Student{FirstMidName="Nino",LastName="Olivetto",EnrollmentDate=DateTime.Parse("2005-09-01")}
             };
 
+            //For each entity type, the code creates a collection of new
+            //entities, adds them to the appropriate DbSet property 
             students.ForEach(s => context.Students.Add(s));
             context.SaveChanges();
 
@@ -37,8 +40,11 @@ namespace ContosoUniversity.DAL
             new Course{CourseID=2021,Title="Composition",Credits=3,},
             new Course{CourseID=2042,Title="Literature",Credits=4,}
             };
-
+                       
             courses.ForEach(s => context.Courses.Add(s));
+
+            //SaveChanges helps you locate the source of a problem if an exception occurs while the code 
+            //is writing to the database
             context.SaveChanges();
 
             var enrollments = new List<Enrollment>
