@@ -114,12 +114,23 @@ namespace ContosoUniversity.Controllers
         }
 
         // GET: Student/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, bool? saveChangesError=false)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+
+            //This code accepts an optional parameter that indicates whether the method was called 
+            //after a failure to save changes. Parameter is false when the HttpGet Delete method is 
+            //called without a previous failure.
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
+            }
+
             Student student = db.Students.Find(id);
             if (student == null)
             {
@@ -128,17 +139,33 @@ namespace ContosoUniversity.Controllers
             return View(student);
         }
 
+
+
+        //This code retrieves the selected entity, then calls the Remove method to set the 
+        //entity's status to Deleted.
+
         // POST: Student/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
-            Student student = db.Students.Find(id);
-            db.Students.Remove(student);
-            db.SaveChanges();
+            try
+            {
+                Student student = db.Students.Find(id);
+                db.Students.Remove(student);
+                db.SaveChanges();
+            }
+            catch (DataException/* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+            }
             return RedirectToAction("Index");
         }
 
+
+        //this code simply adds an override to the Dispose(bool) method to explicitly dispose the 
+        //context instance.
         protected override void Dispose(bool disposing)
         {
             if (disposing)
