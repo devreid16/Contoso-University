@@ -16,7 +16,7 @@ namespace ContosoUniversity.Controllers
         private SchoolContext db = new SchoolContext();
 
         // GET: Student
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string searchString)
         {
             //ViewBag varialbles used so that the view can configure the column heading hyperlinks with the 
             //appropriate query string values.
@@ -25,6 +25,15 @@ namespace ContosoUniversity.Controllers
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var students = from s in db.Students
                            select s;
+
+            // where clause that selects only students whose first name or last name contains the search string.
+            //only executed if there is a value to search for. Where inside If works with all versions of SQL Server.
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.LastName.Contains(searchString)
+                                       || s.FirstMidName.Contains(searchString));
+            }
+
             switch (sortOrder)
             {
                 case "name_desc":
