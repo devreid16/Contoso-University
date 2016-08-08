@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 
 namespace ContosoUniversity.Models
-{
-
+{    
     public enum Grade
     {
         A, B, C, D, F
     }
 
+    //Enrollment Entity
     public class Enrollment
     {
         public int EnrollmentID { get; set; }

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ContosoUniversity.Models
 {
+    //Course Entity
     public class Course
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
