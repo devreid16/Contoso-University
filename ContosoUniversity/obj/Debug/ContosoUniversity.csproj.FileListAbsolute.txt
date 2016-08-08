@@ -42,3 +42,7 @@ C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\bin\Newtonsoft.Json.x
 C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.csprojResolveAssemblyReference.cache
 C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.dll
 C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.pdb
+C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\bin\PagedList.dll
+C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.dll
+C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\bin\PagedList.xml
+C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.xml
