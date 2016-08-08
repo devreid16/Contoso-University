@@ -11,7 +11,7 @@ using ContosoUniversity.Models;
 
 namespace ContosoUniversity.Controllers
 {
-    public class StudentsController : Controller
+    public class StudentController : Controller
     {
         //instantiates a database context object
         private SchoolContext db = new SchoolContext();
@@ -19,6 +19,7 @@ namespace ContosoUniversity.Controllers
         // GET: Students
         public ActionResult Index()
         {
+            //get list of students from students entity
             return View(db.Students.ToList());
         }
 

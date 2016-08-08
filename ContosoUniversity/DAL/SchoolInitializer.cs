@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace ContosoUniversity.DAL
 {
-    public class SchoolInitializers : System.Data.Entity.DropCreateDatabaseIfModelChanges<SchoolContext>
+    public class SchoolInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<SchoolContext>
     {
         //takes the database context object as an input parameter
         //code in the method uses object to add new entities to the database

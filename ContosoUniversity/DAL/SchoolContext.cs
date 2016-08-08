@@ -11,7 +11,7 @@ namespace ContosoUniversity.DAL
     //main class that coordinates Entity Framework functionality for given data model
     public class SchoolContext : DbContext
     {
-        public SchoolContext() : base("SchoolContext") //db connection string
+        public SchoolContext() : base("SchoolContext") 
         {
         }
 
