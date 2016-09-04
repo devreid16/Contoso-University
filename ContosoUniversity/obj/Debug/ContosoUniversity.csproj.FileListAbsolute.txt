@@ -46,3 +46,6 @@ C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\bin\PagedList.dll
 C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.dll
 C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\bin\PagedList.xml
 C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.xml
+C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.Migrations.initial.resources
+C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.csproj.GenerateResource.Cache
+C:\Users\reida\Desktop\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.Migrations.ComplexDataModel.resources
